@@ -1,0 +1,124 @@
+/* Own the layout inside Metronome so theme setting cards cannot remove its gutters. */
+.metronome-settings {
+  container-type: inline-size;
+  font-family: var(--font-interface);
+}
+.metronome-settings *, .metronome-settings *::before, .metronome-settings *::after { box-sizing: border-box; }
+.metronome-settings .metronome-page-header { margin: 0 0 24px; padding: 0; }
+.metronome-settings .metronome-page-header h2,
+.metronome-settings .metronome-section-header h3 {
+  margin: 0 0 6px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: var(--font-interface) !important;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+.metronome-settings .metronome-page-header h2 { font-size: 22px; }
+.metronome-settings .metronome-section-header h3 { font-size: 16px; }
+.metronome-settings .metronome-page-header p,
+.metronome-settings .metronome-section-header p {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-interface) !important;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.metronome-settings .metronome-section {
+  margin: 0 0 24px;
+  padding: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  background: var(--background-primary);
+  min-width: 0;
+}
+.metronome-settings .metronome-section-header { margin: 0; padding: 20px; }
+.metronome-settings .metronome-section .setting-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  margin: 0 !important;
+  padding: 18px 20px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--background-modifier-border) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  min-width: 0;
+  min-height: 0;
+}
+.metronome-settings .metronome-section .setting-item-info {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.metronome-settings .setting-item-name { line-height: 1.4; font-weight: 500; font-size: var(--font-ui-medium); }
+.metronome-settings .setting-item-description { line-height: 1.5; margin-top: 5px; font-size: var(--font-ui-small); overflow-wrap: anywhere; }
+.metronome-settings .metronome-section .setting-item-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.metronome-settings .metronome-section .metronome-field .setting-item-control { flex: 0 0 46%; }
+.metronome-settings .metronome-field input,
+.metronome-settings .metronome-field select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 38px;
+}
+.metronome-settings button { white-space: normal; height: auto; min-height: 38px; max-width: 100%; margin: 0; padding: 9px 14px; line-height: 1.35; }
+.metronome-settings .metronome-save .setting-item-info { display: none; }
+.metronome-settings .metronome-section .metronome-save .setting-item-control { flex: 1 1 auto; }
+.metronome-settings .metronome-message {
+  margin: 0 20px 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.metronome-settings .metronome-message p { margin: 4px 0 0; font-family: inherit; font-size: var(--font-ui-small); color: var(--text-muted); }
+.metronome-settings .metronome-message-error { border-left: 3px solid var(--text-error); }
+.metronome-settings .metronome-repository { margin: 0; padding: 0 20px 16px; font-size: var(--font-ui-small); }
+.metronome-settings .metronome-repository > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 6px 0; }
+.metronome-settings .metronome-repository dt { color: var(--text-muted); }
+.metronome-settings .metronome-repository dd { margin: 0; overflow-wrap: anywhere; }
+.metronome-settings .metronome-details { margin: 0; padding: 16px 20px; border-top: 1px solid var(--background-modifier-border); color: var(--text-muted); line-height: 1.5; font-size: var(--font-ui-small); }
+.metronome-settings .metronome-details summary { cursor: pointer; color: var(--text-normal); }
+.metronome-settings .metronome-details p { margin: 10px 0 0; font-family: inherit; }
+@container (max-width: 560px) {
+  .metronome-settings .metronome-section-header { padding: 16px; }
+  .metronome-settings .metronome-section .setting-item { gap: 12px; padding: 16px !important; }
+  .metronome-settings .metronome-section .metronome-field,
+  .metronome-settings .metronome-section .metronome-action { flex-direction: column; align-items: stretch; }
+  .metronome-settings .metronome-section .metronome-field .setting-item-control,
+  .metronome-settings .metronome-section .metronome-action .setting-item-control { flex: auto; width: 100%; justify-content: flex-start; }
+  .metronome-settings .metronome-action button { width: 100%; min-height: 44px; }
+  .metronome-settings .metronome-field input,
+  .metronome-settings .metronome-field select { min-height: 44px; font-size: 16px; }
+  .metronome-settings .metronome-message { margin-left: 16px; margin-right: 16px; }
+  .metronome-settings .metronome-repository, .metronome-settings .metronome-details { padding-left: 16px; padding-right: 16px; }
+}
+/* Mobile fallback for WebViews without container queries. */
+.is-mobile .metronome-settings .metronome-section-header { padding: 16px; }
+.is-mobile .metronome-settings .metronome-section .setting-item { gap: 12px; padding: 16px !important; }
+.is-mobile .metronome-settings .metronome-section .metronome-field,
+.is-mobile .metronome-settings .metronome-section .metronome-action { flex-direction: column; align-items: stretch; }
+.is-mobile .metronome-settings .metronome-section .metronome-field .setting-item-control,
+.is-mobile .metronome-settings .metronome-section .metronome-action .setting-item-control { flex: auto; width: 100%; justify-content: flex-start; }
+.is-mobile .metronome-settings .metronome-action button { width: 100%; min-height: 44px; }
+.is-mobile .metronome-settings .metronome-field input,
+.is-mobile .metronome-settings .metronome-field select { min-height: 44px; font-size: 16px; }
+.is-mobile .metronome-settings .metronome-message { margin-left: 16px; margin-right: 16px; }
+.is-mobile .metronome-settings .metronome-repository,
+.is-mobile .metronome-settings .metronome-details { padding-left: 16px; padding-right: 16px; }

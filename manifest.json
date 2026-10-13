@@ -1,0 +1,9 @@
+{
+  "id": "metronome",
+  "name": "Metronome",
+  "version": "1.0.0",
+  "minAppVersion": "1.8.7",
+  "description": "Sync notes, attachments, and settings between Windows and Android with recoverable deletions and conflict copies.",
+  "author": "Metronome",
+  "isDesktopOnly": false
+}

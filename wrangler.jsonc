@@ -1,0 +1,39 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "metronome-sync",
+	"main": "server/worker.ts",
+	"compatibility_date": "2025-09-01",
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "VAULTS",
+				"class_name": "VaultCoordinator"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": [
+				"VaultCoordinator"
+			]
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "BLOBS",
+			"bucket_name": "metronome-notes"
+		},
+		{
+			"bucket_name": "metronome-notes",
+			"binding": "metronome_notes",
+			"remote": true
+		}
+	],
+	"vars": {
+		"VAULT_ID": "personal"
+	},
+	"observability": {
+		"enabled": false
+	}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "metronome",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs --watch --install",
+    "install:plugin": "node esbuild.config.mjs --install",
+    "android": "node scripts/android.mjs",
+    "android:push": "node scripts/android-push.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "build": "node esbuild.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "dev:server": "wrangler dev",
+    "deploy:server": "wrangler deploy",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261006.1",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.0",
+    "miniflare": "^5.20261006.1-alpha",
+    "obsidian": "^1.8.7",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  }
+}
